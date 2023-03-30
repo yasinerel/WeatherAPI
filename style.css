@@ -111,13 +111,13 @@ body {
 	width: auto;
 }
 
-.weather-temp {
+.temp {
 	margin: 0;
 	font-weight: 700;
 	font-size: 4em;
 }
 
-.weather-desc {
+.desc {
 	margin: 0;
 }
 

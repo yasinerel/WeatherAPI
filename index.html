@@ -15,10 +15,14 @@
             <div class="date-container">
                 <h2 class="date-dayname">Tuesday</h2><span class="date-day">15 Jan 2019</span><i class="location-icon" data-feather="map-pin"></i><span class="location">Paris, FR</span>
             </div>
-            <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
-                <h1 class="weather-temp">29°C</h1>
-                <h3 class="weather-desc">Sunny</h3>
-            </div>
+
+
+
+        <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
+            <p class="temp"></p>
+            <p class="desc"></p>
+	    </div>
+        
         </div>
         <div class="info-side">
             <div class="today-info-container">
@@ -42,10 +46,29 @@
                     <div class="clear"></div>
                 </ul>
             </div>
-            <div class="location-container"><button class="location-button"> <i data-feather="map-pin"></i><span>Change location</span></button></div>
+            <!-- <div class="location-container"><button class="location-button"> <i data-feather="map-pin"></i><span>Change location</span></button></div> -->
+            <form onsubmit="getWeather(event)">
+                <label for="city">Enter city:</label>
+                <input type="text" id="city" name="city" required> <br>
+                <input type="submit" value="Get Weather">
+            </form>
         </div>
-    </div>
 
-    <script src="app.js"></script>
+    </div>
+    <script>
+		function getWeather(event) {
+			event.preventDefault();
+			const city = document.getElementById('city').value;
+			fetch(`https://api.weatherapi.com/v1/current.json?key=b59efc99d32049f0b0f122055233003&q=${city}`)
+				.then(response => response.json())
+				.then(data => {
+					// document.querySelector('.icon').style.backgroundImage = `url('${data.current.condition.icon}')`;
+					document.querySelector('.temp').textContent = `${data.current.temp_c}°C`;
+                    console.log(data.current.temp_c);
+					document.querySelector('.desc').textContent = data.current.condition.text;
+				})
+				.catch(error => console.error(error));
+		}
+	</script>
 </body>
 </html>
