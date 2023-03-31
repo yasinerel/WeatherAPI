@@ -7,23 +7,24 @@
     <title>Weather</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="showDate()">
     
     <div class="container">
         <div class="weather-side">
             <div class="weather-gradient"></div>
             <div class="date-container">
-                <h2 class="date-dayname">Tuesday</h2><span class="date-day">15 Jan 2019</span><i class="location-icon" data-feather="map-pin"></i><span class="location">Paris, FR</span>
+                <p id="location" style="font-weight: bold; text-transform: capitalize;"></p>
+                <p id="currentDay"></p>
+                <p id="currentDate"></p>
+                
             </div>
 
-
-
-        <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
-            <p class="temp"></p>
-            <p class="desc"></p>
-	    </div>
-
+            <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
+                <p class="temp"></p>
+                <p class="desc"></p>
+            </div>
         </div>
+
         <div class="info-side">
             <div class="today-info-container">
                 <div class="today-info">
@@ -38,6 +39,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="week-container">
                 <ul class="week-list">
                     <li class="active"><i class="day-icon" data-feather="sun"></i><span class="day-name">Tue</span><span class="day-temp">29°C</span></li>
@@ -46,16 +48,25 @@
                     <div class="clear"></div>
                 </ul>
             </div>
-            <!-- <div class="location-container"><button class="location-button"> <i data-feather="map-pin"></i><span>Change location</span></button></div> -->
-            <form onsubmit="getWeather(event)">
+
+            <form class="form" onsubmit="getWeather(event)">
+                <ul class="wrapper">
+                  
+                  <li style="--i:4;"><input class="input" type="text" id="city" name="city" placeholder="Enter city:" required=""></li>
+                  <button type="submit" style="--i:1;">Get Weather</button>
+                </ul>
+            </form>
+              
+
+            <!-- <form onsubmit="getWeather(event)">
                 <label for="city">Enter city:</label>
                 <input type="text" id="city" name="city" required> <br>
                 <input type="submit" value="Get Weather">
-            </form>
+            </form> -->
         </div>
 
     </div>
-    
+
     <script src="app.js"></script>
 </body>
 </html>
