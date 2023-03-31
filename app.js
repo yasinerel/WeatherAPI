@@ -1,6 +1,7 @@
+window.addEventListener('load', getWeather);
 function getWeather(event) {
     event.preventDefault();
-    const city = document.getElementById('city').value;
+    const city = document.getElementById('city').value; 
     const apiKey = 'b59efc99d32049f0b0f122055233003';
     const today = new Date();
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -15,9 +16,9 @@ function getWeather(event) {
             document.getElementById("location").innerHTML = city;
 
             // extract and update additional information
-            document.getElementById("prec").innerHTML = `PRECIPITATION ${data.current.precip_mm} mm`;
-            document.getElementById("hum").innerHTML = `HUMIDITY ${data.current.humidity} %`;
-            document.getElementById("wind").innerHTML = `WIND ${data.current.wind_kph} km/h`;
+            document.getElementById("prec").innerHTML = `PRECIPITATION: ${data.current.precip_mm} mm`;
+            document.getElementById("hum").innerHTML = `HUMIDITY: ${data.current.humidity} %`;
+            document.getElementById("wind").innerHTML = `WIND: ${data.current.wind_kph} km/h`;
         })
         .catch(error => console.error(error));
   
@@ -51,6 +52,12 @@ function getWeather(event) {
       })
       .catch(error => console.error(error));
   }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    getWeather(new Event("submit"));
+    document.getElementById("city").value = "Bayburt";
+  });
+  
 
   function showDate() {
     var today = new Date();
