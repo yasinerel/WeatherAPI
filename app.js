@@ -19,6 +19,35 @@ function getWeather(event) {
             document.getElementById("prec").innerHTML = `PRECIPITATION: ${data.current.precip_mm} mm`;
             document.getElementById("hum").innerHTML = `HUMIDITY: ${data.current.humidity} %`;
             document.getElementById("wind").innerHTML = `WIND: ${data.current.wind_kph} km/h`;
+        
+            // set background image based on weather condition
+            const weatherCondition = data.current.condition.code;
+            const weatherGradient = document.querySelector('.weather-gradient');
+            if (weatherCondition === 1000) {
+                weatherGradient.style.backgroundImage = "url('https://media.istockphoto.com/id/915614956/photo/spring-daisy-flowers.jpg?s=612x612&w=0&k=20&c=0Q_UPeUOTCRdvwUzI3EFx24EoZgYR5rVFBR_iOF9uPc=')";
+            } else if (weatherCondition >= 1003 && weatherCondition <= 1006) {
+                weatherGradient.style.backgroundImage = "url('https://i.pinimg.com/originals/e5/bd/f6/e5bdf6f8126d34510940290b2c61cb29.jpg')";
+            } else if (weatherCondition >= 1009 && weatherCondition <= 1030) {
+                weatherGradient.style.backgroundImage = "url('https://media.istockphoto.com/id/1279089315/photo/dramatic-scene-of-sudden-weather-change-wherein-huge-balls-of-rainy-clouds-are-covering-the.jpg?s=612x612&w=0&k=20&c=I_ev_XbxcAQReWD3g6kYBde00K9vt8BcRkh581ULGEc=')";
+            } else if (weatherCondition >= 1063 && weatherCondition <= 1072) {
+                weatherGradient.style.backgroundImage = "url('https://png.pngtree.com/thumb_back/fh260/background/20210908/pngtree-weather-and-rainy-raindrops-on-the-glass-stay-photography-map-with-image_830605.jpg')";
+            } else if (weatherCondition >= 1087 && weatherCondition <= 1135) {
+                weatherGradient.style.backgroundImage = "url('https://i.pinimg.com/736x/89/7d/83/897d838065e93004c518c3fd4150e00c.jpg)";
+            } else if (weatherCondition >= 1137 && weatherCondition <= 1150) {
+                weatherGradient.style.backgroundImage = "url('https://img.freepik.com/free-photo/beautiful-forested-mountains-fog_181624-719.jpg')";
+            } else if (weatherCondition >= 1153 && weatherCondition <= 1168) {
+                weatherGradient.style.backgroundImage = "url('https://png.pngtree.com/thumb_back/fh260/background/20210908/pngtree-weather-and-rainy-raindrops-on-the-glass-stay-photography-map-with-image_830605.jpg')";
+            } else if (weatherCondition >= 1171 && weatherCondition <= 1189) {
+                weatherGradient.style.backgroundImage = "url('https://png.pngtree.com/thumb_back/fh260/background/20210908/pngtree-weather-and-rainy-raindrops-on-the-glass-stay-photography-map-with-image_830605.jpg')";
+            } else if (weatherCondition >= 1192 && weatherCondition <= 1195) {
+                weatherGradient.style.backgroundImage = "url('https://png.pngtree.com/thumb_back/fh260/background/20210908/pngtree-weather-and-rainy-raindrops-on-the-glass-stay-photography-map-with-image_830605.jpg')";
+            } else if (weatherCondition >= 1197 && weatherCondition <= 1201) {
+                weatherGradient.style.backgroundImage = "url('https://png.pngtree.com/thumb_back/fh260/background/20210908/pngtree-weather-and-rainy-raindrops-on-the-glass-stay-photography-map-with-image_830605.jpg')";
+            } else if (weatherCondition >= 1204 && weatherCondition <= 1237) {
+                weatherGradient.style.backgroundImage = "url('https://img.freepik.com/premium-photo/road-winter-snow-covered-forest_303941-1580.jpg?w=2000')";
+            }
+        
+        
         })
         .catch(error => console.error(error));
   
