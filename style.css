@@ -7,7 +7,7 @@
 * {
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
-	line-height: 1.25em;
+	line-height: 0.9em;
 }
 
 .clear {
@@ -130,7 +130,7 @@ body {
 
 .today-info {
 	padding: 15px;
-	margin: 0 25px 25px 25px;
+	margin: 0 25px 4px 25px;
 /* 	box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25); */
 	border-radius: 10px;
 }
@@ -151,7 +151,7 @@ body {
 .week-list {
 	list-style-type: none;
 	padding: 0;
-	margin: 10px 35px;
+	margin: 6px 35px;
 	-webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
 	        box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
@@ -249,8 +249,8 @@ p#location {
 
 /* you can choose any color you want. don't be afraid to experiment  */
 .form{
-	padding-left: 60px;
-	padding-top: 10px;
+	padding-left: 120px;
+	padding-top: 25px;
 }
 
 .input, button {
